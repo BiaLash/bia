@@ -9,16 +9,18 @@
 <body class="bg-gradient-to-br from-pink-100 to-purple-200 font-sans">
 
   <!-- Header -->
-  <header class="text-center py-10">
+  <header class="text-center py-10 animate-fade">
     <h1 class="text-4xl md:text-5xl font-bold text-purple-800">Bia Hair Studio</h1>
     <p class="text-lg text-gray-700 mt-2">Pacotes de Lavar & Escovar</p>
   </header>
 
-  <!-- Botões principais -->
-  <div class="flex flex-col md:flex-row justify-center gap-4 px-6 mb-10">
-    <a href="https://agendas.link/feffabeautystudio" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition text-center">
-      💬 Agende aqui
-    </a>
+  <!-- Campo nome + data -->
+  <div class="px-6 mb-8 space-y-4">
+    <input id="nomeCliente" placeholder="Digite seu nome..." 
+    class="p-3 rounded-2xl w-full max-w-md mx-auto block shadow-lg text-center">
+
+    <input type="date" id="dataAgendamento" 
+    class="p-3 rounded-2xl w-full max-w-md mx-auto block shadow-lg text-center">
   </div>
 
   <!-- Cards -->
@@ -30,6 +32,11 @@
       <p class="text-gray-700">Cabelo curto e médio</p>
       <p class="text-3xl font-bold mt-3">R$ 75,00</p>
       <p class="text-gray-700 mt-2">Cabelo longo: R$ 95,00</p>
+
+      <button onclick="enviarWhats('Serviço Avulso')" 
+      class="mt-4 w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 rounded-xl">
+        Agendar
+      </button>
     </div>
 
     <!-- Pacote 1x semana -->
@@ -39,6 +46,11 @@
       <p class="text-gray-700">Total: R$ 260,00</p>
       <p class="text-gray-700 mt-2">Longo: R$ 75,00</p>
       <p class="text-gray-700">Total: R$ 300,00</p>
+
+      <button onclick="enviarWhats('Pacote 1x por semana')" 
+      class="mt-4 w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 rounded-xl">
+        Agendar
+      </button>
     </div>
 
     <!-- Pacote 2x semana -->
@@ -48,33 +60,108 @@
       <p class="text-gray-700">Total: R$ 400,00</p>
       <p class="text-gray-700 mt-2">Longo: R$ 60,00</p>
       <p class="text-gray-700">Total: R$ 480,00</p>
+
+      <button onclick="enviarWhats('Pacote 2x por semana')" 
+      class="mt-4 w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 rounded-xl">
+        Agendar
+      </button>
+    </div>
+
+    <!-- NOVOS SERVIÇOS -->
+
+    <div class="bg-white rounded-2xl shadow-xl p-6 hover:scale-105 transition">
+      <h2 class="text-2xl font-bold text-pink-600 mb-4">Hidratação</h2>
+      <p class="text-gray-700">Tratamento completo</p>
+      <p class="text-3xl font-bold mt-3">R$ 145,00</p>
+
+      <button onclick="enviarWhats('Hidratação capilar')" 
+      class="mt-4 w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 rounded-xl">
+        Agendar
+      </button>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-xl p-6 hover:scale-105 transition">
+      <h2 class="text-2xl font-bold text-pink-600 mb-4">Corte</h2>
+      <p class="text-gray-700">Corte profissional</p>
+      <p class="text-3xl font-bold mt-3">R$ 80,00</p>
+
+      <button onclick="enviarWhats('Corte de cabelo')" 
+      class="mt-4 w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 rounded-xl">
+        Agendar
+      </button>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-xl p-6 hover:scale-105 transition">
+      <h2 class="text-2xl font-bold text-pink-600 mb-4">Escova Premium</h2>
+      <p class="text-gray-700">Finalização perfeita</p>
+      <p class="text-3xl font-bold mt-3">R$ 120,00</p>
+
+      <button onclick="enviarWhats('Escova Premium')" 
+      class="mt-4 w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 rounded-xl">
+        Agendar
+      </button>
     </div>
 
   </section>
 
-  <!-- Adicionais -->
-  <section class="px-6 pb-12">
-    <div class="bg-white rounded-2xl shadow-xl p-6 max-w-2xl mx-auto">
-      <h2 class="text-2xl font-bold text-pink-600 mb-4">Adicionais</h2>
-      <ul class="text-gray-700 space-y-2">
-        <li>Hidratação capilar: R$ 145,00</li>
-        <li>Corte: R$ 80,00</li>
-      </ul>
-    </div>
-  </section>
+  <!-- Botão flutuante WhatsApp -->
+  <a href="#" onclick="abrirWhatsFlutuante()" 
+     class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl text-2xl animate-bounce">
+     💬
+  </a>
 
-  <!-- Contato -->
-  <section id="contato" class="text-center pb-12">
-    <h2 class="text-2xl font-bold text-purple-800 mb-4">Contato</h2>
-    <a href="https://wa.me/5549991273818" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition">
-      💬 Fale com a gente aqui
+  <!-- CONTATO (AGORA EMBAIXO) -->
+  <section class="text-center pb-12">
+    <a href="https://agendas.link/feffabeautystudio" target="_blank" 
+    class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-2xl shadow-lg transition hover:scale-105">
+      💬 Agende aqui
     </a>
   </section>
+
+  <!-- Script -->
+  <script>
+    function montarMensagem(servico){
+      let nome = document.getElementById("nomeCliente").value;
+      let data = document.getElementById("dataAgendamento").value;
+
+      if(nome === ""){
+        alert("Digite seu nome 😄");
+        return null;
+      }
+
+      return `Olá, meu nome é ${nome} e quero agendar ${servico} para ${data}`;
+    }
+
+    function enviarWhats(servico) {
+      let mensagem = montarMensagem(servico);
+      if(!mensagem) return;
+
+      let url = "https://wa.me/5549999748347?text=" + encodeURIComponent(mensagem);
+      window.open(url, "_blank");
+    }
+
+    function abrirWhatsFlutuante(){
+      let mensagem = montarMensagem('um atendimento');
+      if(!mensagem) return;
+
+      let url = "https://wa.me/5549999748347?text=" + encodeURIComponent(mensagem);
+      window.open(url, "_blank");
+    }
+  </script>
 
   <!-- Footer -->
   <footer class="text-center py-6 text-gray-600">
     © 2026 Bia Hair Studio
   </footer>
+
+  <!-- Animação -->
+  <style>
+    .animate-fade { animation: fadeIn 1s ease-in-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 
 </body>
 </html>
